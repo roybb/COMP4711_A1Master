@@ -11,10 +11,7 @@ Group Members
 Name             E-mail
 ===============  ========================
 Andrew Lockhart  lockan@gmail.com
-===============  ========================
 James Lee        jamessosailee@gmail.com
-===============  ========================
 William Chiang   williampwc@hotmail.com
-===============  ========================
 Roy Banks        rbanksbywater@gmail.com
 ===============  ========================
