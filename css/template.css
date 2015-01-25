@@ -1,0 +1,53 @@
+body
+{
+	background-color:	#cdc;
+}
+
+#wrapper_main
+{
+	position: 			fixed;
+	height:				100%;
+	width:				100%;
+	border:				1px dotted magenta;
+}
+
+.heading_page
+{
+	position: 			relative;
+	display:			inline-block;
+	height:				10%;
+	width:				100%;
+	border:				1px dotted magenta;
+	text-align:			center;	
+}
+
+#heading_text
+{
+	display:			inline-block;
+	vertical-align:		middle;
+	line-height:		2em;
+	font-size:			2em;
+	font-style:			bold;
+	font-weight: 		bold;
+}
+
+#menu_wrapper
+{
+	position: 			relative;
+	float:				left;
+	display: 			inline-block;
+	height:				100%;
+	width:				10%;
+	border:				1px dotted magenta;
+}
+
+.content_page
+{
+	position: 			relative;
+	display: 			inline-block;
+	float:				left;
+	height:				100%;
+	width:				70%;
+	border:				1px dotted magenta;
+}
+
