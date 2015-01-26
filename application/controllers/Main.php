@@ -6,20 +6,17 @@ class Main extends Main_Controller {
 
 	function __construct() {
         parent::__construct();
-		$this->data["pagetitle"] = "RedScribeIt Homepage";
     }
 	
 	public function index()
-	{
-		$this->load->view('_template_main');
+	{	
+		/* Set the page title, heading, and content here */
+		$this->data["pagetitle"] = "RedScribeIt Main";
+		$this->data["heading"] = "RedScribeIt Main";
+		$this->data["content"] = 'main';
 		
-		$this->data['pagetitle'] = "THIS IS THE PAGE TITLE";
-		$this->data['pagebody'] = 'main';
+		/* calls Render in the Main_Controller 
+		see MY_Controller.php in ./core */
+		$this->render(); 
 	}
-	
-	function render() 
-	{
-		$this->parser->parse('main', $this->data);
-	}
-	
 }

@@ -9,13 +9,12 @@ class Main_Controller extends CI_Controller {
 	function __construct() {
         parent::__construct();
 		$this->data = array();
-		$this->data["pagetitle"] = "PAGE TITLE NOT SET";
     }
 	
 	function render() 
 	{
-		$this->data["content"] = $this->parser->parse($this->data["pagebody"]);
-		$this->parser->parse('_template_main', $this->data);
+		$this->data["menu"] = "MENU NOT SET";
+		$this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
+		$this->parser->parse("_template_main", $this->data);
 	}
-	
 }
