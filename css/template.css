@@ -1,6 +1,6 @@
 body
 {
-	background-color:	#cdc;
+	background-color:	#ddd;
 }
 
 #wrapper_main
@@ -41,7 +41,7 @@ body
 	border:				1px dotted magenta;
 }
 
-.content_page
+.content_wrapper
 {
 	position: 			relative;
 	display: 			inline-block;
