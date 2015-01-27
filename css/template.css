@@ -8,17 +8,17 @@ body
 	position: 			fixed;
 	height:				100%;
 	width:				100%;
-	border:				1px dotted magenta;
 }
 
 .heading_page
 {
 	position: 			relative;
 	display:			inline-block;
-	height:				10%;
+	height:				100px;
 	width:				100%;
-	border:				1px dotted magenta;
 	text-align:			center;	
+	color:				#eee;
+	background:			#800;
 }
 
 #heading_text
@@ -37,17 +37,32 @@ body
 	float:				left;
 	display: 			inline-block;
 	height:				100%;
-	width:				10%;
-	border:				1px dotted magenta;
+	width:				150px;
+	color:				#eee;
+	background:			#800;
+}
+
+#contentframe
+{
+	position: 			relative;
+	display: 			inline-block;
+	float:				left;
+	height:				100%;
+	width:				84%;
+	text-align:			center;
+	background:			#fff;
 }
 
 .content_wrapper
 {
 	position: 			relative;
 	display: 			inline-block;
-	float:				left;
 	height:				100%;
-	width:				70%;
-	border:				1px dotted magenta;
+	width:				90%;
+	margin-top:			20px;
+	padding:			10px;
+	text-align:			left;
+	background:			#eee;
+	border-radius:		20px;
 }
 

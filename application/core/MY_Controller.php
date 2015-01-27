@@ -9,11 +9,16 @@ class Main_Controller extends CI_Controller {
 	function __construct() {
         parent::__construct();
 		$this->data = array();
+		$this->buttons = array();
     }
 	
 	function render() 
 	{
-		$this->data["menu"] = "MENU NOT SET";
+		/* Set up  menu */
+		/*$buttons[] = $this->parser->parse("_button", (array) $button, true);*/
+		$this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
+		
+		/* Set up page */
 		$this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
 		$this->parser->parse("_template_main", $this->data);
 	}
