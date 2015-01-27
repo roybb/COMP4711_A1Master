@@ -13,7 +13,7 @@ class Main_Controller extends CI_Controller {
 	
 	function render() 
 	{
-		$this->data["menu"] = "MENU NOT SET";
+		$this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
 		$this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
 		$this->parser->parse("_template_main", $this->data);
 	}
