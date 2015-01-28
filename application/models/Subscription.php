@@ -27,7 +27,7 @@ class Subscription extends CI_Model {
 	{
 		$sub->$items = array();
 		// Start populating dummy data
-		for ($i = 0; $i < 5; ++$i)
+		for ($i = 0; $i < 5; $i++)
 		{
 			$sub->array_push($items, "" . $i . ") This is a hard-coded fake post");
 		}

@@ -11,8 +11,8 @@ class Main extends Main_Controller {
 	public function index()
 	{	
 		/* Set the page title, heading, and content here */
-		$this->data["pagetitle"] = "RedScribeIt Main";
-		$this->data["heading"] = "RedScribeIt Main";
+		$this->data["pagetitle"] = "RedScribeIt";
+		$this->data["heading"] = "RedScribeIt";
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		

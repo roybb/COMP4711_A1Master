@@ -1,0 +1,4 @@
+<?php
+
+?>
+<li>{subpost}</li>
