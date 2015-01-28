@@ -1,0 +1,28 @@
+body
+{
+	background-color:	#fff;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#loginframe
+{
+	height:				100%;
+	width:				100%;
+	background:			#fff;
+}
+
+.login_wrapper
+{
+	height:				100%;
+	width:				90%;
+	text-align:			center;
+    margin-left:        auto;
+    margin-right:       auto;
+	background:			#eee;
+	border-radius:		20px;
+    margin-top:         20px;
+    padding-top:        10px;
+}
+

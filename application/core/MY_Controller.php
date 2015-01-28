@@ -22,4 +22,10 @@ class Main_Controller extends CI_Controller {
 		$this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
 		$this->parser->parse("_template_main", $this->data);
 	}
+    
+    function render_login()
+    {
+        $this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
+		$this->parser->parse("_template_login", $this->data);
+    }
 }
