@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UserRegister extends Main_Controller {
+class Main extends Main_Controller {
 
 	function __construct() {
         parent::__construct();
@@ -18,6 +18,6 @@ class UserRegister extends Main_Controller {
 		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
-		$this->render_userregister(); 
+		$this->render(); 
 	}
 }

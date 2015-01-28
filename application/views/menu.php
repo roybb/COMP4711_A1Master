@@ -11,7 +11,7 @@
 
 <a href="" class="button_div">
 	<div class="menubutton">
-		Manager Subs
+		Manage Subs
 	</div>
 </a>
 
