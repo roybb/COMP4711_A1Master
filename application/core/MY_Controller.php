@@ -9,7 +9,7 @@ class Main_Controller extends CI_Controller {
 	function __construct() {
         parent::__construct();
 		$this->data = array();
-		$this->buttons = array();
+		/*$this->buttons = array();*/
     }
 	
 	function render() 
