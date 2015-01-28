@@ -3,6 +3,16 @@
 		Your RedScribeIt Subs
 	</div>
  
-	<p>Main page content goes here</p>
+	<p/>
+	{subscriptions}
+	
+	<p>
+	<ul>
+		<li>List1 </li>
+		<ul>
+			<li> Subitem 1</li>
+			<li> Subitem 2</li>
+		</ul>
+	</ul>
 </div>
 
