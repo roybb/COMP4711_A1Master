@@ -15,7 +15,7 @@
 			</div>
 			
 			<div id="loginframe">
-				<div id="content" class="content_wrapper">
+				<div class="login_wrapper">
 				{content}
 				</div>
 			</div>
