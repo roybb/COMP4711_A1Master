@@ -15,10 +15,11 @@ class Login extends Main_Controller {
     }
 
     function index() {
+        $this->data['login'] = 'login';
+        $this->data["href"]= "/userregister";
         $this->data["pagetitle"] = "RedScribeIt Login";
         $this->data["heading"] = "RedScribeIt Login";
-		$this->data["content"] = "login";
-
+        
         $this->render_login();
     }
     
