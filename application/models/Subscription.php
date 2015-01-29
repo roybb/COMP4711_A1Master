@@ -12,7 +12,7 @@ class Subscription extends CI_Model {
 	function getUserSubs() 
 	{
 		// Create temp dummy data for now
-		$subs = array();
+		$this->$subs = array();
 		array_push($subs, "http://www.reddit.com");
 		array_push($subs, "http://www.google.ca");
 		array_push($subs, "http://www.cnn.com");

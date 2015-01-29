@@ -16,6 +16,9 @@ class Main extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		
+		$this->load->model('subscription');
+		$this->data["subs"] = $this->subscription->getUserSubs();
+		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
 		$this->render(); 
