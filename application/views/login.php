@@ -8,13 +8,13 @@
             </tr>
             <tr>
                 <td><label for="password">Password:</label></td>
-                <td><input id="password" type="text" name="password"></td>
+                <td><input id="password" type="password" name="password"></td>
             </tr>
             <tr>
                 <td><input type="submit" value="Login"></td>
             </tr>
         </table>
     </form> 
-    <p id="new_account"> <a href="/login">Create a new account</a> </p>
+    <p id="new_account"> <a href={href}>Create a new account</a> </p>
 </div>
 
