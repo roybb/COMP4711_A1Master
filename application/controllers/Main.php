@@ -18,6 +18,6 @@ class Main extends Main_Controller {
 		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
-		$this->render_userregister(); 
+		$this->render(); 
 	}
 }
