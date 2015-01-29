@@ -5,6 +5,13 @@
  
 	<p/>
 	{subscriptions}
+	<h1></h1>
+	{sub}
+	<ul>
+	{posts}
+	{/posts}
+	</ul>
+	{/subscriptions}
 	
 	<p>Ignore the thing below. 
 	<ul>

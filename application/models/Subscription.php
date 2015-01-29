@@ -2,25 +2,26 @@
 
 class Subscription extends CI_Model {
 
+	protected $subs = array();
+	
 	function __construct()
 	{
 		parent::__construct();
 	}
 	
-	$subs = array();
 	
 	function getUserSubs() 
 	{
 		// Create temp dummy data for now
-		$this->$subs = array();
-		array_push($subs, "http://www.reddit.com");
-		array_push($subs, "http://www.google.ca");
-		array_push($subs, "http://www.cnn.com");
-		array_push($subs, "http://www.cbc.ca");
-		array_push($subs, "http://www.bcit.ca");
+		$this->subs = array();
+		$this->subs["url1"] = "http://www.reddit.com";
+		$this->subs["url2"] = "http://www.google.ca";
+		$this->subs["url3"] = "http://www.cnn.com";
+		$this->subs["url4"] = "http://www.cbc.ca";
+		$this->subs["url5"] = "http://www.reddit.com";
 		// End fake data. 
 		
-		return $subs;
+		return $this->subs;
 	}
 	
 	function getSubPosts($sub)
