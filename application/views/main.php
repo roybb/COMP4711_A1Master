@@ -13,12 +13,14 @@
 	</ul>
 	{/subscriptions}
 	
-	<p>Ignore the thing below. 
+	<p>Sample expected output style below: 
 	<ul>
-		<li>List1 </li>
+		<li>Subscription Feed URL </li>
 		<ul>
-			<li> Subitem 1</li>
-			<li> Subitem 2</li>
+			<li> Feed post 1</li>
+			<li> Feed post 2</li>
+			<li> Feed post 3</li>
+			<li> Feed post 4</li>
 		</ul>
 	</ul>
 	

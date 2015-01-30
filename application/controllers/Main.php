@@ -29,13 +29,11 @@ class Main extends Main_Controller {
 	{
 		$this->load->model("subscription");
 		$subscriptions = array();
-		$subscriptions["subscriptions"]["0"] = "Bob.com";
-		$subscriptions["subscriptions"]["1"] = "George.com";
-		//$subscriptions["subscriptions"]["posts"] = "posts go here";
-		//$subscriptions["subscriptions"]["sub2"] = "Bob.com";
-		//$subscriptions["subscriptions"]["posts2"] = "posts go here";
+		$subscriptions["subscriptions"]["sub"] = "Bob.com";
+		$subscriptions["subscriptions"]["posts"] = "George.com";
 		$this->data["subscriptions"] = $subscriptions;
 		
+		//TEMP - Debugging the array
 		echo '<pre>';
 		print_r($subscriptions);
 		echo '</pre>';
