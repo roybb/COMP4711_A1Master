@@ -28,11 +28,13 @@ class Main extends Main_Controller {
 	private function renderSubs()
 	{
 		$this->load->model("subscription");
-		$post = array();
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 2");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 3");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 4");
-		$this->data["subscriptions"] = $post;
+		$urlssarray = array();
+		$urlssarray = $this->subscription->getUserSubs();
+		
+		foreach ($urlssarray as $url)
+		{
+			$single = $this->parser->parse("_subscription", $url, false); // set true to stop breaking page
+		}
+		$this->data["subscriptions"] = $single;		
 	}
 }

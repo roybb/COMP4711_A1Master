@@ -1,7 +1,7 @@
 <?php
 ?>
 <div>
-<h1 id="sub_title">{sub}</h1>
+<h3 id="sub_url"> {sub} </h3>
 <ul>
-{posts}
+<li> {posts} </li>
 </div>

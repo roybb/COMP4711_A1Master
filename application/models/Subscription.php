@@ -13,12 +13,11 @@ class Subscription extends CI_Model {
 	function getUserSubs() 
 	{
 		// Create temp dummy data for now
+		
 		$this->subs = array();
-		$this->subs["url1"] = "http://www.reddit.com";
-		$this->subs["url2"] = "http://www.google.ca";
-		$this->subs["url3"] = "http://www.cnn.com";
-		$this->subs["url4"] = "http://www.cbc.ca";
-		$this->subs["url5"] = "http://www.reddit.com";
+		
+		$this->subs["0"] = array("sub" => "This is a subreddit url", "posts" => "Eddy wuz here");
+		$this->subs["1"] = array("sub" => "This is another subreddit url", "posts" => "This is a post under the sub");		
 		// End fake data. 
 		
 		return $this->subs;
