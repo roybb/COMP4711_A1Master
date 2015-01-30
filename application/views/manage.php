@@ -1,8 +1,5 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<div id="content_main"> 
+	<h2>Search For Subreddits</h2>
+        <input type="search" placeholder="Search">
+        <input type="submit" value="Search">
+</div>
