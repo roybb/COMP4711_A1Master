@@ -16,8 +16,8 @@ class Subscription extends CI_Model {
 		
 		$this->subs = array();
 		
-		$this->subs["0"] = array("sub" => "This is a subreddit url", "posts" => "Eddy wuz here");
-		$this->subs["1"] = array("sub" => "This is another subreddit url", "posts" => "This is a post under the sub");		
+		$this->subs["0"] = array("sub" => "This is a subreddit url");
+		$this->subs["1"] = array("sub" => "This is another subreddit url");		
 		// End fake data. 
 		
 		return $this->subs;

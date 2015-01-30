@@ -3,30 +3,10 @@
 		Your RedScribeIt Subs
 	</div>
 	
-	<p><i>Code-generated subscription output below: </i>
- 
 	<p/>
 	{subscriptions}
 		{sub_details}
 	{/subscriptions}
-	
-	<p><i>Sample expected output style below: </i>
-	<ul>
-		<li>Subscription Feed URL </li>
-		<ul>
-			<li> Feed post 1</li>
-			<li> Feed post 2</li>
-			<li> Feed post 3</li>
-			<li> Feed post 4</li>
-		</ul>
-		<br><li>Subscription Feed URL 2</li>
-		<ul>
-			<li> Feed post 1</li>
-			<li> Feed post 2</li>
-			<li> Feed post 3</li>
-			<li> Feed post 4</li>
-		</ul>
-	</ul>
 	
 </div>
 

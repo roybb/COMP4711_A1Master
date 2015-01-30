@@ -19,30 +19,14 @@ class Main extends Main_Controller {
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
 		
-				
-		//$this->renderSubs();
 		$this->load->model("subscription");
 		$this->createSubContent();
 		$this->render();
 		
 	}
 	
-	private function renderSubs()
-	{
-		//$this->load->model("subscription");
-		$urlssarray = array();
-		$urlssarray = $this->subscription->getUserSubs();
-		
-		foreach ($urlssarray as $url)
-		{
-			$single = $this->parser->parse("_subscription", $url, false); // set true to stop breaking page
-		}
-		$this->data["subscriptions"] = $single;		
-	}
-	
 	private function createSubContent()
 	{
-		//$this->load->model("subscription");
 		$urlssarray = array();
 		$urlssarray = $this->subscription->getUserSubs();
 		$mysubs = array();
@@ -50,18 +34,27 @@ class Main extends Main_Controller {
 		{
 			$mysubs[] = array("sub_details" => $this->createSingleSub($url));
 		}
-		$this->data["subscriptions"] = array("sub_details" => $mysubs);
+		$this->data["subscriptions"] = $mysubs;
 	}
 	
-	function createSingleSub($suburl) {
-		//$this->load->model("subscription");
-		$posts = $this->subscription->getSubPosts($suburl);
+	function createSingleSub($url) {
+	
+		$posts = $this->subscription->getSubPosts($url);
 		$myposts = array();
+		$mysuburl = array("sub_url" => $url);
 		foreach ($posts as $post) 
 		{
-			$myposts[] = array("sub_url" => $suburl, "post_link" => "test2");
+			$myposts[] = array("post_url" => $post, "post_link" => $post);
+			
 		}
-		$parms = array("posts" => $myposts, "feedurl"=>$suburl, "sub_url"=>$suburl);
-		return $this->parser->parse("_subscription", $parms, false);
+		$parms = array("posts" => $myposts, "sub_url" => $url["sub"]);
+		return $this->parser->parse("_subscription", $parms, true);
+	}
+	
+	function debugArray($array)
+	{
+		echo '<pre>'; 
+		print_r($array); 
+		echo '</pre>';
 	}
 }
