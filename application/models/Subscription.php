@@ -14,11 +14,12 @@ class Subscription extends CI_Model {
 	{
 		// Create temp dummy data for now
 		$this->subs = array();
-		$this->subs["url1"] = "http://www.reddit.com";
-		$this->subs["url2"] = "http://www.google.ca";
-		$this->subs["url3"] = "http://www.cnn.com";
-		$this->subs["url4"] = "http://www.cbc.ca";
-		$this->subs["url5"] = "http://www.reddit.com";
+		$this->subs["0"] = array("sub" => "http://www.reddit.com");
+		$this->subs["1"] = "http://www.google.ca";
+		$this->subs["2"] = "http://www.cnn.com";
+		$this->subs["3"] = "http://www.cbc.ca";
+		$this->subs["4"] = "http://www.reddit.com";	
+		
 		// End fake data. 
 		
 		return $this->subs;

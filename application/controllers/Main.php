@@ -28,11 +28,17 @@ class Main extends Main_Controller {
 	private function renderSubs()
 	{
 		$this->load->model("subscription");
-		$post = array();
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 2");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 3");
-		$post[] = array( "sub" => "http://google.com", "post" => "This is the post 4");
-		$this->data["subscriptions"] = $post;
+		$subscriptions = array();
+		$subscriptions["subscriptions"]["0"] = "Bob.com";
+		$subscriptions["subscriptions"]["1"] = "George.com";
+		//$subscriptions["subscriptions"]["posts"] = "posts go here";
+		//$subscriptions["subscriptions"]["sub2"] = "Bob.com";
+		//$subscriptions["subscriptions"]["posts2"] = "posts go here";
+		$this->data["subscriptions"] = $subscriptions;
+		
+		echo '<pre>';
+		print_r($subscriptions);
+		echo '</pre>';
+		
 	}
 }
