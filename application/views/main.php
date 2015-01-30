@@ -7,7 +7,6 @@
  
 	<p/>
 	{subscriptions}
-	
 	{/subscriptions}
 	
 	<p><i>Sample expected output style below: </i>

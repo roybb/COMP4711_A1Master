@@ -28,18 +28,13 @@ class Main extends Main_Controller {
 	private function renderSubs()
 	{
 		$this->load->model("subscription");
-		$contentarray = array();
-		$contentarray = $this->subscription->getUserSubs();
+		$urlssarray = array();
+		$urlssarray = $this->subscription->getUserSubs();
 		
-		foreach ($contentarray as $url)
+		foreach ($urlssarray as $url)
 		{
-			$this->data["subscriptions"] = $this->parser->parse("_subscription", $this->data);
+			$single = $this->parser->parse("_subscription", $url, false); // set true to stop breaking page
 		}
-		
-		
-		//TEMP - Debugging the array
-		echo '<pre>';
-		print_r($contentarray);
-		echo '</pre>';
+		$this->data["subscriptions"] = $single;		
 	}
 }
