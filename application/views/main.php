@@ -7,6 +7,7 @@
  
 	<p/>
 	{subscriptions}
+		{sub_details}
 	{/subscriptions}
 	
 	<p><i>Sample expected output style below: </i>

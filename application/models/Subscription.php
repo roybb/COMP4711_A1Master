@@ -25,15 +25,15 @@ class Subscription extends CI_Model {
 	
 	function getSubPosts($sub)
 	{
-		$sub->$items = array();
+		$sub["posts"] = array();
 		// Start populating dummy data
 		for ($i = 0; $i < 5; $i++)
 		{
-			$sub->array_push($items, "" . $i . ") This is a hard-coded fake post");
+			$sub["posts"][$i] = "This is hard-coded fake post number " . $i;
 		}
 		// End dummy data
 		
-		return $sub->$items;
+		return $sub["posts"];
 	}
 	
 	function addSub($url)

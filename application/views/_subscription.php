@@ -1,7 +1,9 @@
 <?php
 ?>
 <div>
-<h3 id="sub_url"> {sub} </h3>
+<h3 id="sub_url"> {sub_url} </h3>
 <ul>
-<li> {posts} </li>
+{posts}
+<li><a href=""> {post_link} </a></li>
+{/posts}
 </div>
