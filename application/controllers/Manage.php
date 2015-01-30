@@ -17,6 +17,7 @@ class Manage extends Main_Controller {
              /* Set the page title, heading, and content here */
             $this->data["pagetitle"] = "RedScribeIt Manage";
             $this->data["heading"] = "Manage Subscriptions";
+            $this->data["menu"] = "menu";
             $this->data["content"] = 'manage';
 		
             /* calls Render in the Main_Controller 
