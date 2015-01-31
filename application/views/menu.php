@@ -4,27 +4,27 @@
 
 <a href="" class="button_div">
 	<div class="menubutton">
-		View Subs
+		<a href="/subs">View Subs</a> 
 	</div>
 </a>
 
 
 <a href="" class="button_div">
 	<div class="menubutton">
-		Manage Subs
+		<a href="/manage">Manage Subs</a>
 	</div>
 </a>
 
 
 <a href="" class="button_div">
 	<div class="menubutton">
-		*Admin*
+		<a href="/admin">*Admin*</a>
 	</div>
 </a>
 
 
 <a href="" class="button_div">
 	<div class="menubutton">
-		Log Out
+		<a href="logout">Log Out</a>
 	</div>
 </a>

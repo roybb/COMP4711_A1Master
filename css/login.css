@@ -6,13 +6,6 @@ body
     padding: 0px;
 }
 
-#loginframe
-{
-	height:				100%;
-	width:				100%;
-	background:			#fff;
-}
-
 .login_wrapper
 {
 	height:				100%;
@@ -26,3 +19,21 @@ body
     padding-top:        10px;
 }
 
+#loginframe
+{
+	height:				100%;
+	width:				100%;
+	background:			#fff;
+}
+
+#login_table
+{
+	margin-left:        auto; 
+    margin-right:       auto; 
+    width:              200px;
+}
+
+#new_account
+{
+    font-size:          75%;
+}
