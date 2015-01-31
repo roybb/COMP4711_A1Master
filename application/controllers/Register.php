@@ -16,8 +16,6 @@ class Register extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "register";
 		
-		/* calls Render in the Main_Controller 
-		see MY_Controller.php in ./core */
-		$this->render(); 
+		$this->render_register(); 
 	}
 }

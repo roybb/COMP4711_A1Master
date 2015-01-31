@@ -2,10 +2,10 @@
 	<h2>User Registration</h2>
         <form action="">
             <label for="username">Username:</label>
-            <input id="username" type="text" name="fname">
+            <input id="username" type="text" name="username">
             <br>
             <label for="password">Password:</label>
-            <input type="password" name="lname">
+            <input type="password" name="password">
             <br>
         <input type="submit" value="Register">
     </form> 
