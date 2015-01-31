@@ -2,29 +2,29 @@
 
 ?>
 
-<a href="" class="button_div">
+<a href="/" class="button_div">
 	<div class="menubutton">
-		<a href="/subs">View Subs</a> 
+		View Subs
 	</div>
 </a>
 
 
-<a href="" class="button_div">
+<a href="/manage" class="button_div">
 	<div class="menubutton">
-		<a href="/manage">Manage Subs</a>
+		Manage Subs
 	</div>
 </a>
 
 
-<a href="" class="button_div">
+<a href="/admin" class="button_div">
 	<div class="menubutton">
-		<a href="/admin">*Admin*</a>
+		*Admin*
 	</div>
 </a>
 
 
-<a href="" class="button_div">
+<a href="/logout" class="button_div">
 	<div class="menubutton">
-		<a href="logout">Log Out</a>
+		Log Out
 	</div>
 </a>
