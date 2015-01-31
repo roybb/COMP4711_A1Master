@@ -28,4 +28,10 @@ class Main_Controller extends CI_Controller {
         
 		$this->parser->parse("_template_login", $this->data);
     }
+    
+    function render_register()
+    {
+                /* will use same template as login page */
+		$this->parser->parse("_template_register", $this->data);
+    }
 }
