@@ -12,6 +12,11 @@
 	text-decoration:	none;
 }
 
+a
+{
+	text-decoration: 	none;
+}
+
 a:link .menubutton
 {
 	color:				#999;
@@ -27,13 +32,13 @@ a:hover .menubutton
 	font-weight:		bold;
 }
 
-a:active
+a:active .menubutton /* no menubutton class, else this overrides hover state */
 {
 	color:				#fff;
 	border:				1px solid #fff;
 }
 
-a:visited
+a:visited /* no menubutton class, else this overrides hover state */
 {
 	color:				#999;
 	border:				1px solid #ccc;
