@@ -20,6 +20,8 @@ class Login extends Main_Controller {
         $this->data["pagetitle"] = "RedScribeIt Login";
         $this->data["heading"] = "RedScribeIt Login";
         
+        $this->data["content"] = $this->parser->parse($this->data["login"], $this->data, true);
+        
         $this->render_login();
     }
     
