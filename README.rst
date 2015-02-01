@@ -2,7 +2,8 @@
 COMP4711_A1Master
 #################
 
-COMP4711 Assignment 1 - Group project master repository. 
+COMP4711 Assignment 1 - Group project master repository.
+**Repo Link:** https://github.com/lockan/COMP4711_A1Master.git 
 
 
 *************
