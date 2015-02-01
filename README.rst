@@ -6,7 +6,7 @@ COMP4711 Assignment 1 - Group project master repository.
 
 Repository Link:
 ================
-https://github.com/lockan/COMP4711_A1Master.git
+
 
 *************
 Group Members
