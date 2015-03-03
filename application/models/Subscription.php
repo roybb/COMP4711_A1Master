@@ -41,6 +41,14 @@ class Subscription extends CI_Model {
 		$i = 0;
 		foreach ($json->data->children as $post)
 		{
+			//Useful: url, title, permalink, thumbnail?
+			/*
+			// Temp: uncomment this block to see the json output. 
+			echo "<pre>";
+			print_r($post->data);
+			echo "</pre>";
+			*/
+			
 			$sub["posts"][$i] = $post->data->url;
 			++$i;			
 		}
