@@ -35,26 +35,16 @@ class Subscription extends CI_Model {
 		// if validated, deserialize JSON. 
 		$json = json_decode($resp);
 
-		//Test
-		foreach ($json->data->children as $post)
-		{
-			echo "<pre>";
-			print_r("Url: " . $post->data->url);
-			print_r("\nTitle: " . $post->data->title);
-			echo "</pre>";
-		}
-		
-		
-		//TODO: parse data out of JSON and add urls to $sub array. 
+		//Parse data out of JSON and add urls to $sub array. 
 		//Need to get the [url] and [title] fields primarily. 
 		$sub["posts"] = array();
-		// Start populating dummy data
-		for ($i = 0; $i < 5; $i++)
+		$i = 0;
+		foreach ($json->data->children as $post)
 		{
-			$sub["posts"][$i] = "This is hard-coded fake post number " . $i;
+			$sub["posts"][$i] = $post->data->url;
+			++$i;			
 		}
-		// End dummy data
-		
+				
 		return $sub["posts"];
 	}
 	
