@@ -13,6 +13,13 @@ class Subscription extends CI_Model {
 	function getUserSubs() 
 	{
 		// Create temp dummy data for now
+		// Need to pull subreddits using api here.
+		$resp = $this->getTop5("http://www.reddit.com/r/destiny");
+		$json = json_decode($resp);
+		
+		echo "<pre>";
+		(print_r($json));
+		echo "</pre>";
 		
 		$this->subs = array();
 		
@@ -39,6 +46,13 @@ class Subscription extends CI_Model {
 	function addSub($url)
 	{
 		//Temp - to add in part 2. 
+	}
+	
+	function getTop5($url) 
+	{
+		$endpoint = $url . "/new.json?limit=5";
+		$result = file_get_contents($endpoint);
+		return $result;
 	}
 
 }
