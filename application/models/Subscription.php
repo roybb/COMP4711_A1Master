@@ -12,17 +12,13 @@ class Subscription extends CI_Model {
 	
 	function getUserSubs() 
 	{
-		// Create temp dummy data for now
-		// Need to pull subreddits using api here.
-		$resp = $this->getTop5("http://www.reddit.com/r/destiny");
-		$json = json_decode($resp);
+		// TODO: First retrieve subscriptions from the db. 
 		
-		echo "<pre>";
-		(print_r($json));
-		echo "</pre>";
 		
+		//TODO: populate array with stored urls from the subs table db table. 
 		$this->subs = array();
 		
+		//TEMP: fake data. 
 		$this->subs["0"] = array("sub" => "This is a subreddit url");
 		$this->subs["1"] = array("sub" => "This is another subreddit url");		
 		// End fake data. 
@@ -32,6 +28,19 @@ class Subscription extends CI_Model {
 	
 	function getSubPosts($sub)
 	{
+		//Pull newest5 subreddit posts using reddit api here.
+		$resp = $this->getTop5("http://www.reddit.com/r/destiny");
+		//TODO: validate in case bad http response and handle. 
+		
+		// if validated, deserialize JSON. 
+		$json = json_decode($resp);
+
+		//Test
+		echo "<pre>";
+		(print_r($json));
+		echo "</pre>";
+		
+		//TODO: parse data out of JSON and add urls to $sub array. 
 		$sub["posts"] = array();
 		// Start populating dummy data
 		for ($i = 0; $i < 5; $i++)
@@ -50,6 +59,7 @@ class Subscription extends CI_Model {
 	
 	function getTop5($url) 
 	{
+		//Calls the reddit "new" API to return the newest 5 posts in a sub. 
 		$endpoint = $url . "/new.json?limit=5";
 		$result = file_get_contents($endpoint);
 		return $result;
