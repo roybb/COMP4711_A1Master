@@ -36,11 +36,17 @@ class Subscription extends CI_Model {
 		$json = json_decode($resp);
 
 		//Test
-		echo "<pre>";
-		(print_r($json));
-		echo "</pre>";
+		foreach ($json->data->children as $post)
+		{
+			echo "<pre>";
+			print_r("Url: " . $post->data->url);
+			print_r("\nTitle: " . $post->data->title);
+			echo "</pre>";
+		}
+		
 		
 		//TODO: parse data out of JSON and add urls to $sub array. 
+		//Need to get the [url] and [title] fields primarily. 
 		$sub["posts"] = array();
 		// Start populating dummy data
 		for ($i = 0; $i < 5; $i++)
@@ -59,7 +65,8 @@ class Subscription extends CI_Model {
 	
 	function getTop5($url) 
 	{
-		//Calls the reddit "new" API to return the newest 5 posts in a sub. 
+		//Calls the reddit "new" API to return the newest 5 posts in a sub.
+		//QUESTION: is there a way to make this a async call? 
 		$endpoint = $url . "/new.json?limit=5";
 		$result = file_get_contents($endpoint);
 		return $result;
