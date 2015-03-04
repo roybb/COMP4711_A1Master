@@ -38,7 +38,7 @@ class Subscription extends CI_Model {
 	
 	function addSub($url)
 	{
-		//Temp - to add in part 2. 
+            $this->redscribeit->insert(subs,$url);
 	}
 
 }
