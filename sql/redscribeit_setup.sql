@@ -8,7 +8,8 @@ CREATE TABLE users (
 	userid	INT(16) PRIMARY KEY,
 	uname	VARCHAR(24) UNIQUE NOT NULL,
 	pword	VARCHAR(24) NOT NULL,
-	role	VARCHAR(8)
+	role	VARCHAR(8), 
+	avatar	VARCHAR(64)	
 );
 
 ALTER TABLE users CHANGE userid userid INT(16) AUTO_INCREMENT;
