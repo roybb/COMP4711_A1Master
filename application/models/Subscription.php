@@ -14,7 +14,7 @@ class Subscription extends CI_Model {
 	{
 		// TODO: First retrieve subscriptions from the db. 
 		
-		
+		//$this->db->
 		//TODO: populate array with stored urls from the subs table db table. 
 		$this->subs = array();
 		
