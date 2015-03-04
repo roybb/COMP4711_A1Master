@@ -12,12 +12,19 @@
 		<div id="wrapper_main">
 					
 			<div class="heading_page">
+				<div id="profilebox">
+					<img id="avatar" alt="avatar" src="{avatar}"></image>
+					<br>{uname} </br>
+				</div>
 				<span id="heading_text">{heading}</span>
+				<p>
+				<div id="menu_wrapper">
+					{menu}
+				</div>
+			
 			</div>
 			
-			<div id="menu_wrapper">
-			{menu}
-			</div>
+			<p>
 			
 			<div id="contentframe">
 				<div id="content" class="content_wrapper">
