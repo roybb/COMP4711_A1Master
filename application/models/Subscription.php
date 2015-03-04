@@ -42,17 +42,18 @@ class Subscription extends CI_Model {
 		foreach ($json->data->children as $post)
 		{
 			//Useful: url, title, permalink, thumbnail?
-			/*
+			
 			// Temp: uncomment this block to see the json output. 
+			/*
 			echo "<pre>";
 			print_r($post->data);
 			echo "</pre>";
 			*/
 			
 			$sub["posts"][$i] = $post->data->url;
-			++$i;			
+			++$i;		
 		}
-				
+		//REMINDER: Getting dupe data because I have 2 fake subs. See getUserSubs(). 
 		return $sub["posts"];
 	}
 	
