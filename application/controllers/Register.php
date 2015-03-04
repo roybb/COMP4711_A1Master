@@ -14,7 +14,8 @@ class Register extends Main_Controller {
 		$this->data["pagetitle"] = "RedScribeIt User Registration";
 		$this->data["heading"] = "RedScribeIt Registration";
 		$this->data["menu"] = "menu";
-		$this->data["content"] = "register";
+                $this->data['register'] = 'register';
+		$this->data["content"] = $this->parser->parse($this->data["register"], $this->data, true);
 		
                 $data = array(
                 'Student_Name' => $this->input->post('dname'),
