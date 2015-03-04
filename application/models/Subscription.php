@@ -10,13 +10,26 @@ class Subscription extends CI_Model {
 	}
 	
 	
-	function getUserSubs() 
+	function getUserSubs($userid) 
 	{
+		$subscription = $this->load->model('subscription');
 		// TODO: First retrieve subscriptions from the db. 
-		
-		//$this->db->
+		$usersubs = $this->subscription->some('subs', $userid);
+		if (count($usersubs) < 1) $usersubs = null;
+
 		//TODO: populate array with stored urls from the subs table db table. 
 		$this->subs = array();
+		if ($usersubs != null) 
+		{
+			foreach ($usersubs as $sub) 
+			{
+				array_push($subs, $sub);
+			}
+		}
+		else
+		{
+			$this->subs = null;
+		}
 		
 		//TEMP: fake data. 
 		$this->subs["0"] = array("sub" => "This is a subreddit url");
