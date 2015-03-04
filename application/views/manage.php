@@ -1,6 +1,9 @@
 <div id="content_main"> 
-	<h2>Search For a Subreddit</h2>
-        <input type="search" placeholder="Search">
-        <input type="submit" value="Search">
+	<h2>Add a Subreddit</h2>
+        <form>
+            <input type="text" name="subreddit"><br>
+            <br>
+            <input type="submit" value="Add">
+        </form>
 </div>
 
