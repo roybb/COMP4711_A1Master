@@ -16,7 +16,7 @@ class Login extends Main_Controller {
 
     function index() {
         $this->data['login'] = 'login';
-        $this->data["href"]= "/userregister";
+        $this->data["href"]= "/register";
         $this->data["pagetitle"] = "RedScribeIt Login";
         $this->data["heading"] = "RedScribeIt Login";
         
