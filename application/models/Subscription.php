@@ -10,8 +10,9 @@ class Subscription extends CI_Model {
 	}
 	
 	
-	function getUserSubs($userid) 
+	function getUserSubs() 
 	{
+		/*
 		$subscription = $this->load->model('subscription');
 		// TODO: First retrieve subscriptions from the db. 
 		$usersubs = $this->subscription->some('subs', $userid);
@@ -30,8 +31,9 @@ class Subscription extends CI_Model {
 		{
 			$this->subs = null;
 		}
-		
+		*/
 		//TEMP: fake data. 
+		$this->subs = array();
 		$this->subs["0"] = array("sub" => "This is a subreddit url");
 		$this->subs["1"] = array("sub" => "This is another subreddit url");		
 		// End fake data. 

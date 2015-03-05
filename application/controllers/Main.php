@@ -16,6 +16,10 @@ class Main extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		
+		/* Set user avatar img here */
+		$this->data["avatar"] = "assets/images/null.jpg";
+		$this->data["uname"] = "NULLUSER";
+		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
 		

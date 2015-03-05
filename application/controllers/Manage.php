@@ -19,6 +19,10 @@ class Manage extends Main_Controller {
             $this->data["heading"] = "Manage Subscriptions";
             $this->data["menu"] = "menu";
             $this->data["content"] = 'manage';
+			
+			/* Set username and avatar img here */
+			$this->data["avatar"] = "assets/images/null.jpg";
+			$this->data["uname"] = "NULLUSER";
 		
             /* calls Render in the Main_Controller 
             see MY_Controller.php in ./core */
