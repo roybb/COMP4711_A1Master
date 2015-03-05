@@ -15,7 +15,6 @@ class Main_Controller extends CI_Controller {
 	function render() 
 	{
 		/* Set up  menu */
-		/*$buttons[] = $this->parser->parse("_button", (array) $button, true);*/
 		$this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
 		
 		/* Set up page */

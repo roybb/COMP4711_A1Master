@@ -12,15 +12,31 @@ class Subscription extends CI_Model {
 	
 	function getUserSubs() 
 	{
+		/*
+		$subscription = $this->load->model('subscription');
 		// TODO: First retrieve subscriptions from the db. 
-		
-		//$this->db->
+		$usersubs = $this->subscription->some('subs', $userid);
+		if (count($usersubs) < 1) $usersubs = null;
+
 		//TODO: populate array with stored urls from the subs table db table. 
 		$this->subs = array();
-		
+		if ($usersubs != null) 
+		{
+			foreach ($usersubs as $sub) 
+			{
+				array_push($subs, $sub);
+			}
+		}
+		else
+		{
+			$this->subs = null;
+		}
+		*/
 		//TEMP: fake data. 
-		$this->subs["0"] = array("sub" => "This is a subreddit url");
-		$this->subs["1"] = array("sub" => "This is another subreddit url");		
+		$this->subs = array();
+		$this->subs["0"] = array("sub" => "http://www.reddit.com/r/destiny");
+		$this->subs["1"] = array("sub" => "http://www.reddit.com/r/tacobell");
+		$this->subs["2"] = array("sub" => "http://www.reddit.com/r/codeigniter");
 		// End fake data. 
 		
 		return $this->subs;
@@ -29,7 +45,7 @@ class Subscription extends CI_Model {
 	function getSubPosts($sub)
 	{
 		//Pull newest5 subreddit posts using reddit api here.
-		$resp = $this->getTop5("http://www.reddit.com/r/destiny");
+		$resp = $this->getTop5($sub["sub"]);
 		//TODO: validate in case bad http response and handle. 
 		
 		// if validated, deserialize JSON. 
@@ -49,8 +65,8 @@ class Subscription extends CI_Model {
 			print_r($post->data);
 			echo "</pre>";
 			*/
-			
-			$sub["posts"][$i] = $post->data->url;
+			$sub["posts"][$i]["permalink"] = $post->data->permalink;
+			$sub["posts"][$i]["title"] = $post->data->title;
 			++$i;		
 		}
 		//REMINDER: Getting dupe data because I have 2 fake subs. See getUserSubs(). 
