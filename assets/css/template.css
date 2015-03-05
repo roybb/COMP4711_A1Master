@@ -5,8 +5,7 @@ body
 
 #wrapper_main
 {
-	position: 			fixed;
-	height:				100%;
+	margin:				0 auto;
 	width:				100%;
 }
 
@@ -52,11 +51,11 @@ body
 	width:				100%;
 	text-align:			center;
 	background:			#fff;
-	overflow:			hidden;
 }
 
 .content_wrapper
 {
+	border:				2px solid pink;
 	position: 			relative;
 	display: 			inline-block;
 	height:				100%;

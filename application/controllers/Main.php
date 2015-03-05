@@ -50,7 +50,11 @@ class Main extends Main_Controller {
 		$mysuburl = array("sub_url" => $url);
 		foreach ($posts as $post) 
 		{
-			$myposts[] = array("post_url" => $post, "post_link" => $post);
+			$myposts[] = array(
+				"post_url" => $post["permalink"], 
+				"post_link" => $post["permalink"],
+				"post_title" => $post["title"]
+			);
 			
 		}
 		$parms = array("posts" => $myposts, "sub_url" => $url["sub"]);

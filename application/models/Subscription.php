@@ -35,7 +35,8 @@ class Subscription extends CI_Model {
 		//TEMP: fake data. 
 		$this->subs = array();
 		$this->subs["0"] = array("sub" => "http://www.reddit.com/r/destiny");
-		$this->subs["1"] = array("sub" => "http://www.reddit.com/r/tacobell");		
+		$this->subs["1"] = array("sub" => "http://www.reddit.com/r/tacobell");
+		$this->subs["2"] = array("sub" => "http://www.reddit.com/r/codeigniter");
 		// End fake data. 
 		
 		return $this->subs;
@@ -64,8 +65,8 @@ class Subscription extends CI_Model {
 			print_r($post->data);
 			echo "</pre>";
 			*/
-			
-			$sub["posts"][$i] = $post->data->permalink;
+			$sub["posts"][$i]["permalink"] = $post->data->permalink;
+			$sub["posts"][$i]["title"] = $post->data->title;
 			++$i;		
 		}
 		//REMINDER: Getting dupe data because I have 2 fake subs. See getUserSubs(). 
