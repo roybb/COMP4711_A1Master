@@ -29,6 +29,7 @@ class Main extends Main_Controller {
 		
 	}
 	
+	//Calls to Subscription model to populate page with subscription data. 
 	private function createSubContent()
 	{
 		$urlssarray = array();
@@ -41,6 +42,7 @@ class Main extends Main_Controller {
 		$this->data["subscriptions"] = $mysubs;
 	}
 	
+	//Sets up view data for a single sub. 
 	function createSingleSub($url) {
 	
 		$posts = $this->subscription->getSubPosts($url);
