@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 class Subscription extends MY_Model {
