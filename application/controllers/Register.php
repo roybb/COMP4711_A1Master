@@ -29,8 +29,8 @@ class Register extends Main_Controller {
 	}
         
         function do_upload()
-	{
-		$config['upload_path'] = './assets/images';
+	{	
+                $config['upload_path'] = './assets/images';
 		$config['allowed_types'] = 'gif|jpg|xpng';
 		$config['max_size']	= '100';
 		$config['max_width']  = '128';
@@ -54,7 +54,8 @@ class Register extends Main_Controller {
                     $userdata = array(
                         'uname' => $this->input->post('username'),
                         'pword' => $this->input->post('password'),
-                        'avatar' => $imagepath
+                        'avatar' => $imagepath,
+                        'role' => "user"
                     );
                     /* submit user data to database */
                     $this->users->adduser($userdata);
