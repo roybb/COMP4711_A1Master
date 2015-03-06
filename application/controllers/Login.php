@@ -27,7 +27,7 @@ class Login extends Main_Controller {
         if (count($this->errors) > 0)
         {
             foreach($this->errors as $booboo)
-                $message .= $booboo;
+                $message .= $booboo ;
         }
         $this->data['message'] = $message;
         
@@ -43,13 +43,13 @@ class Login extends Main_Controller {
         $userid = $this->input->post('username');
         $userpwd = $this->input->post('password');
         
-        //validate
+        //validate user input
         if(empty($userid))
             $this->errors[] = 'No user name was specified.';
         else if(empty($userpwd))
             $this->errors[] = 'no password was entered.';
-        else
-            $this->errors[] = 'incorrect user name and password combination';
+        //else
+        //    $this->errors[] = 'incorrect user name and password combination';
         
         //redirect based on successful login or failure
         if (count($this->errors) > 0) 
