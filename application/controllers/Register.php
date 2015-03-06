@@ -14,8 +14,18 @@ class Register extends Main_Controller {
 		$this->data["pagetitle"] = "RedScribeIt User Registration";
 		$this->data["heading"] = "RedScribeIt Registration";
 		$this->data["menu"] = "menu";
-		$this->data["content"] = "register";
+                $this->data['register'] = 'register';
+		$this->data["content"] = $this->parser->parse($this->data["register"], $this->data, true);
 		
+                $data = array(
+                'Student_Name' => $this->input->post('dname'),
+                'Student_Email' => $this->input->post('demail'),
+                'Student_Mobile' => $this->input->post('dmobile'),
+                'Student_Address' => $this->input->post('daddress')
+                );
+                
+                /* calls render_register() in the Main_Controller 
+                   , see MY_Controller.php in ./core */
 		$this->render_register(); 
 	}
 }

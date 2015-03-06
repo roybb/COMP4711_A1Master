@@ -22,6 +22,10 @@ class Manage extends Main_Controller {
             $this->data["content"] = 'manage';
             
             $this->load->model("subscription");
+			
+	    /* Set username and avatar img here */
+            $this->data["avatar"] = "assets/images/null.jpg";
+            $this->data["uname"] = "NULLUSER";
 		
             /* calls Render in the Main_Controller 
             see MY_Controller.php in ./core */
@@ -32,7 +36,6 @@ class Manage extends Main_Controller {
         $record->url = $this->input->post('furl');
         $record->userid = 1;
         $this->subscription->add($record);
-        //$this->subscription->addSub();
         redirect('/manage');
     }
 }

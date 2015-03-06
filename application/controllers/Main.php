@@ -16,6 +16,10 @@ class Main extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		
+		/* Set user avatar img here */
+		$this->data["avatar"] = "assets/images/null.jpg";
+		$this->data["uname"] = "NULLUSER";
+		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
 		
@@ -25,6 +29,7 @@ class Main extends Main_Controller {
 		
 	}
 	
+	//Calls to Subscription model to populate page with subscription data. 
 	private function createSubContent()
 	{
 		$urlssarray = array();
@@ -37,6 +42,7 @@ class Main extends Main_Controller {
 		$this->data["subscriptions"] = $mysubs;
 	}
 	
+	//Sets up view data for a single sub. 
 	function createSingleSub($url) {
 	
 		$posts = $this->subscription->getSubPosts($url);
@@ -44,7 +50,11 @@ class Main extends Main_Controller {
 		$mysuburl = array("sub_url" => $url);
 		foreach ($posts as $post) 
 		{
-			$myposts[] = array("post_url" => $post, "post_link" => $post);
+			$myposts[] = array(
+				"post_url" => $post["permalink"], 
+				"post_link" => $post["permalink"],
+				"post_title" => $post["title"]
+			);
 			
 		}
 		$parms = array("posts" => $myposts, "sub_url" => $url["sub"]);
