@@ -1,12 +1,9 @@
 <?php
 
-class Users extends CI_Model {
-
-	protected $subs = array();
-	
+class Users extends MY_Model {
 	function __construct()
 	{
-		parent::__construct('users', 'id');	
+            parent::__construct('users', 'id');	
 	}
 
         function adduser($data)
