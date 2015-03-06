@@ -10,24 +10,32 @@ class Manage extends Main_Controller {
 
     function __construct() {
         parent::__construct();
+        //$this->load->helper('formfields');
     }
     
-    function index() {
+    public function index() {
         
              /* Set the page title, heading, and content here */
             $this->data["pagetitle"] = "RedScribeIt Manage";
             $this->data["heading"] = "Manage Subscriptions";
             $this->data["menu"] = "menu";
             $this->data["content"] = 'manage';
+            
+            $this->load->model("subscription");
 			
-			/* Set username and avatar img here */
-			$this->data["avatar"] = "assets/images/null.jpg";
-			$this->data["uname"] = "NULLUSER";
+	    /* Set username and avatar img here */
+            $this->data["avatar"] = "assets/images/null.jpg";
+            $this->data["uname"] = "NULLUSER";
 		
             /* calls Render in the Main_Controller 
             see MY_Controller.php in ./core */
-            $this->render(); 
-        
+            $this->render();  
     }
-    
+    function confirm() {
+        $record = $this->subscription->create();
+        $record->url = $this->input->post('furl');
+        $record->userid = 1;
+        $this->subscription->add($record);
+        redirect('/manage');
+    }
 }

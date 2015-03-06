@@ -1,12 +1,12 @@
 <?php
 
-class Subscription extends CI_Model {
+class Subscription extends MY_Model {
 
 	protected $subs = array();
 	
-	function __construct()
+	public function __construct()
 	{
-		parent::__construct();
+		parent::__construct('subs', 'userid');
 	}
 	
 	
@@ -88,4 +88,3 @@ class Subscription extends CI_Model {
 	}
 
 }
-

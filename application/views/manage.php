@@ -1,6 +1,7 @@
-<div id="content_main"> 
-	<h2>Search For a Subreddit</h2>
-        <input type="search" placeholder="Search">
-        <input type="submit" value="Search">
+<div id="content_main" class="content_page"> 
+    <form action = "/manage/confirm" method = "post">
+        URL: <input type="text" name="furl"><br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
 
