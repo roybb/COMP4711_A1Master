@@ -1,9 +1,7 @@
 <div id="content_main"> 
-	<h2>Add a Subreddit</h2>
-        <form>
-            <input type="text" name="subreddit"><br>
-            <br>
-            <input type="submit" value="Add">
-        </form>
+    <form action = "/manage/confirm" method = "post">
+        URL: <input type="text" name="furl"><br>
+        <input type="submit" value="Submit">
+    </form>
 </div>
 
