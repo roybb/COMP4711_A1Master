@@ -31,7 +31,8 @@ class Register extends Main_Controller {
         function do_upload()
 	{	
                 $config['upload_path'] = './assets/images';
-		$config['allowed_types'] = 'gif|jpg|xpng';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+                $config['overwrite'] = TRUE;
 		$config['max_size']	= '100';
 		$config['max_width']  = '128';
 		$config['max_height']  = '128';
