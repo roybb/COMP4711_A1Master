@@ -39,6 +39,8 @@ class Login extends Main_Controller {
     }
     
     function confirmlogin() {
+        session_start();
+        
         //pull information from form
         $userid = $this->input->post('username');
         $userpwd = $this->input->post('password');
@@ -48,8 +50,11 @@ class Login extends Main_Controller {
             $this->errors[] = 'No user name was specified.';
         else if(empty($userpwd))
             $this->errors[] = 'no password was entered.';
-        //else
+        else {
         //    $this->errors[] = 'incorrect user name and password combination';
+            $_SESSION['user'] = $userid;
+            $_SESSION['role'] = 'user';
+        }
         
         //redirect based on successful login or failure
         if (count($this->errors) > 0) 
