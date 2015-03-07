@@ -18,9 +18,9 @@ class Loginmodel extends MY_Model {
         else
         {
             if ($user[0]->pword == $passwd)
-                $ret['validation'] = TRUE;
+                $ret = TRUE;
             else
-                $ret['validation'] = FALSE;
+                $ret = FALSE;
         }
            
         return $ret;

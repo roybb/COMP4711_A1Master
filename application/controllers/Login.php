@@ -57,6 +57,10 @@ class Login extends Main_Controller {
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['id'] = $user['id'];
             }
+            else 
+            {
+                $this->errors[] = 'unhandled error case';
+            }
         }
         
         //redirect based on successful login or failure
