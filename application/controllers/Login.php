@@ -16,10 +16,14 @@ class Login extends Main_Controller {
     }
 
     function index() {     
+        $this->load->model("loginmodel");
+        $testing = $this->loginmodel->validateLogin();
+    
         //puts everything into /views/_template_login.php
         $this->data['login'] = 'login';
         $this->data["href"]= "/register";
-        $this->data["pagetitle"] = "RedScribeIt Login";
+        //$this->data["pagetitle"] = "RedScribeIt Login";
+        $this->data["pagetitle"] = $testing->uname;
         $this->data["heading"] = "RedScribeIt Login";
         
         //this stuff builds the form to let users log in
