@@ -1,13 +1,5 @@
 <?php
 
-/**
- * Our homepage. Show a table of all the author pictures. Clicking on one should show their quote.
- * Our quotes model has been autoloaded, because we use it everywhere.
- * 
- * controllers/Welcome.php
- *
- * ------------------------------------------------------------------------
- */
 class Login extends Main_Controller {
 
     function __construct() {
@@ -22,7 +14,7 @@ class Login extends Main_Controller {
         $this->data["pagetitle"] = "RedScribeIt Login";
         $this->data["heading"] = "RedScribeIt Login";
         
-        //this stuff builds the form to let users log in
+        //displays error messages if there were any
         $message = '';
         if (count($this->errors) > 0)
         {
@@ -40,6 +32,7 @@ class Login extends Main_Controller {
     
     function confirmlogin() {
         session_start();
+        $this->load->model("loginmodel");
         
         //pull information from form
         $userid = $this->input->post('username');
@@ -49,11 +42,25 @@ class Login extends Main_Controller {
         if(empty($userid))
             $this->errors[] = 'No user name was specified.';
         else if(empty($userpwd))
-            $this->errors[] = 'no password was entered.';
+            $this->errors[] = 'No password was entered.';
         else {
-        //    $this->errors[] = 'incorrect user name and password combination';
-            $_SESSION['user'] = $userid;
-            $_SESSION['role'] = 'user';
+            $ret = $this->loginmodel->validateLogin($userid, $userpwd);
+            if ($ret == FALSE)
+            {
+                $this->errors[] = 'Incorrect username and password combination';
+            }
+            else if ($ret == TRUE)
+            {
+                //if validation success then grab the user information and store into session
+                $user = $this->loginmodel->getUser($userid);
+                $_SESSION['user'] = $user['name'];
+                $_SESSION['role'] = $user['role'];
+                $_SESSION['id'] = $user['id'];
+            }
+            else 
+            {
+                $this->errors[] = 'Unhandled error case';
+            }
         }
         
         //redirect based on successful login or failure
@@ -65,6 +72,3 @@ class Login extends Main_Controller {
     
 
 }
-
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
