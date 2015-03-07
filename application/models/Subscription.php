@@ -1,6 +1,6 @@
 <?php
 
-class Subscription extends MY_Model {
+class Subscription extends MY_Model2 {
 
 	protected $subs = array();
 	
@@ -12,10 +12,9 @@ class Subscription extends MY_Model {
 	
 	function getUserSubs($uid) 
 	{
-		
 		$subscription = $this->load->model('subscription');
 		// Retrieve subscriptions from the db. 
-		$usersubs = $this->subscription->some('subid', $uid);
+		$usersubs = $this->subscription->some('userid', $uid);
 
 		// Populate array with stored urls from the subs table db table. 
 		$this->subs = array();
@@ -31,15 +30,6 @@ class Subscription extends MY_Model {
 		{
 			$this->subs = null;
 		}
-		
-		//TEMP: fake data.
-		/*
-		$this->subs = array();
-		$this->subs["0"] = array("sub" => "http://www.reddit.com/r/destiny");
-		$this->subs["1"] = array("sub" => "http://www.reddit.com/r/tacobell");
-		$this->subs["2"] = array("sub" => "http://www.reddit.com/r/codeigniter");
-		*/
-		// End fake data. 
 		
 		return $this->subs;
 	}
