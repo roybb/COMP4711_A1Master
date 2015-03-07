@@ -37,11 +37,21 @@ class Main extends Main_Controller {
 	private function createSubContent()
 	{
 		$urlssarray = array();
-		$urlssarray = $this->subscription->getUserSubs();
+		$urlssarray = $this->subscription->getUserSubs($_SESSION["id"]);
 		$mysubs = array();
-		foreach ($urlssarray as $url) 
+		
+		if ($urlssarray != null) 
 		{
-			$mysubs[] = array("sub_details" => $this->createSingleSub($url));
+			foreach ($urlssarray as $url) 
+			{
+				$mysubs[] = array("sub_details" => $this->createSingleSub($url));
+				//Blank out message; only required for errors. See below. 
+				$this->data["message"] = null; 
+			}
+		}
+		else 
+		{
+			$this->data["message"] = "You have no subs to display. Please use manage to add subs.";
 		}
 		$this->data["subscriptions"] = $mysubs;
 	}
