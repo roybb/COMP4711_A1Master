@@ -37,3 +37,10 @@ body
 {
     font-size:          75%;
 }
+
+.errors 
+{
+    color: red;
+    font-weight: bold;
+    font-size: large;
+}
