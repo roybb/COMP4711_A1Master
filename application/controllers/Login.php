@@ -42,12 +42,12 @@ class Login extends Main_Controller {
         if(empty($userid))
             $this->errors[] = 'No user name was specified.';
         else if(empty($userpwd))
-            $this->errors[] = 'no password was entered.';
+            $this->errors[] = 'No password was entered.';
         else {
             $ret = $this->loginmodel->validateLogin($userid, $userpwd);
             if ($ret == FALSE)
             {
-                $this->errors[] = 'incorrect username and password combination';
+                $this->errors[] = 'Incorrect username and password combination';
             }
             else if ($ret == TRUE)
             {
@@ -59,7 +59,7 @@ class Login extends Main_Controller {
             }
             else 
             {
-                $this->errors[] = 'unhandled error case';
+                $this->errors[] = 'Unhandled error case';
             }
         }
         
