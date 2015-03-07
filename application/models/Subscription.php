@@ -1,6 +1,6 @@
 <?php
 
-class Subscription extends MY_Model {
+class Subscription extends MY_Model2 {
 
 	protected $subs = array();
 	
@@ -10,34 +10,26 @@ class Subscription extends MY_Model {
 	}
 	
 	
-	function getUserSubs() 
+	function getUserSubs($uid) 
 	{
-		/*
 		$subscription = $this->load->model('subscription');
-		// TODO: First retrieve subscriptions from the db. 
-		$usersubs = $this->subscription->some('subs', $userid);
-		if (count($usersubs) < 1) $usersubs = null;
+		// Retrieve subscriptions from the db. 
+		$usersubs = $this->subscription->some('userid', $uid);
 
-		//TODO: populate array with stored urls from the subs table db table. 
+		// Populate array with stored urls from the subs table db table. 
 		$this->subs = array();
 		if ($usersubs != null) 
 		{
-			foreach ($usersubs as $sub) 
+			foreach ($usersubs as $sub)
 			{
-				array_push($subs, $sub);
+				$s = array("sub" => $sub->url);
+				array_push($this->subs, $s);
 			}
 		}
 		else
 		{
 			$this->subs = null;
 		}
-		*/
-		//TEMP: fake data. 
-		$this->subs = array();
-		$this->subs["0"] = array("sub" => "http://www.reddit.com/r/destiny");
-		$this->subs["1"] = array("sub" => "http://www.reddit.com/r/tacobell");
-		$this->subs["2"] = array("sub" => "http://www.reddit.com/r/codeigniter");
-		// End fake data. 
 		
 		return $this->subs;
 	}
@@ -69,7 +61,7 @@ class Subscription extends MY_Model {
 			$sub["posts"][$i]["title"] = $post->data->title;
 			++$i;		
 		}
-		//REMINDER: Getting dupe data because I have 2 fake subs. See getUserSubs(). 
+		
 		return $sub["posts"];
 	}
 	

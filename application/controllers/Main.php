@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends Main_Controller {
 
 	function __construct() {
-        parent::__construct();
+        parent::__construct('users', 'userid');
     }
 	
 	public function index()
@@ -16,9 +16,13 @@ class Main extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		
-		/* Set user avatar img here */
-		$this->data["avatar"] = "assets/images/null.jpg";
-		$this->data["uname"] = "NULLUSER";
+		/* Do avatar setup */
+		session_Start();
+		$user = array();
+		$user = $this->users->get($_SESSION["id"]); 	//This needs to get session var. 
+		$this->data["uname"] = $_SESSION["user"];
+		$this->data["avatar"] = "assets/images/" . $user->avatar;
+		/* End avatar setup */
 		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
@@ -33,11 +37,21 @@ class Main extends Main_Controller {
 	private function createSubContent()
 	{
 		$urlssarray = array();
-		$urlssarray = $this->subscription->getUserSubs();
+		$urlssarray = $this->subscription->getUserSubs($_SESSION["id"]);
 		$mysubs = array();
-		foreach ($urlssarray as $url) 
+		
+		if ($urlssarray != null) 
 		{
-			$mysubs[] = array("sub_details" => $this->createSingleSub($url));
+			foreach ($urlssarray as $url) 
+			{
+				$mysubs[] = array("sub_details" => $this->createSingleSub($url));
+				//Blank out message; only required for errors. See below. 
+				$this->data["message"] = null; 
+			}
+		}
+		else 
+		{
+			$this->data["message"] = "You have no subs to display. Please use manage to add subs.";
 		}
 		$this->data["subscriptions"] = $mysubs;
 	}

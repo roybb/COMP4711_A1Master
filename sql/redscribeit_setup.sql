@@ -18,7 +18,7 @@ CREATE TABLE subs (
 	subid	INT(16) PRIMARY KEY, 
 	userid	INT(16) NOT NULL, 
 	url		VARCHAR(256) NOT NULL,
-	CONSTRAINT fk_users FOREIGN KEY (userid) REFERENCES users(userid)
+	CONSTRAINT fk_users FOREIGN KEY (userid) REFERENCES users(userid) ON DELETE CASCADE
 );
 
 ALTER TABLE subs CHANGE subid subid INT(16) AUTO_INCREMENT;

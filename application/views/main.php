@@ -8,6 +8,8 @@
 		{sub_details}
 	{/subscriptions}
 	
+	{message}
+	
 </div>
 
 

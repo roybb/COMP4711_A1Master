@@ -272,7 +272,7 @@ class MY_Model2 extends MY_Model {
 
     // Constructor
 
-    function __construct($tablename = null, $keyfield = 'id', $keyfield2 = 'part') {
+    function __construct($tablename = null, $keyfield = 'id', $keyfield2 = 'userid') {
         parent::__construct($tablename, $keyfield);
         $this->_keyField2 = $keyfield2;
     }
