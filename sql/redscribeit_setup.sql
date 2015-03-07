@@ -22,3 +22,5 @@ CREATE TABLE subs (
 );
 
 ALTER TABLE subs CHANGE subid subid INT(16) AUTO_INCREMENT;
+
+INSERT INTO users (uname, pword, role, avatar) VALUES('admin', 'admin', 'admin', 'admin.jpg');
