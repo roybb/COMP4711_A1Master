@@ -40,17 +40,30 @@ class Register extends Main_Controller {
                 /* set upload restrictions for upload configuration */
 		$this->upload->initialize($config);
                 
-                /* user uploads an invalid file */
-                if ( !$this->upload->do_upload())
+                /* user uploads no file or an invalid file */
+                if ( !$this->upload->do_upload() )
 		{
-                    $this->error = $this->upload->display_errors();
-                    $this->index();
+                    /* user assigned a default image if no uploaded file selected but provides username and password */
+                    if ( $this->input->post('username') != '' && $this->input->post('password') != '' && $this->upload->data()["file_size"] == NULL )  {
+                        $userdata = array(
+                        'uname' => $this->input->post('username'),
+                        'pword' => $this->input->post('password'),
+                        'avatar' => 'null.jpg',
+                        'role' => "user"
+                         );
+                        /* check for duplicate entries & register accordingly */
+                        $this->isDuplicate();
+                    } else {
+                        /* user uploads an invalid file */
+                        $this->error = $this->upload->display_errors();
+                        $this->index();
+                    }
 		}
 		else
 		{
                     /* grab image path from file upload */
                     $imagedata = $this->upload->data();
-                    $imagepath = $imagedata["full_path"];
+                    $imagepath = $imagedata["file_name"];
                     
                     $userdata = array(
                         'uname' => $this->input->post('username'),
@@ -58,10 +71,21 @@ class Register extends Main_Controller {
                         'avatar' => $imagepath,
                         'role' => "user"
                     );
-                    /* submit user data to database */
-                    $this->users->adduser($userdata);
-                    /* send to login page or send to their homepage */
-                    redirect('/login', 'refresh');
+                    /* check for duplicate entries & register accordingly */
+                    $this->isDuplicate();
 		}
 	}
+        
+        function isDuplicate() {
+            /* first check for duplicate user */
+            if ($this->users->checkDuplicate($userdata['uname'])) {
+                /* successful register, username not taken */
+                $this->users->adduser($userdata);
+                redirect('/login', 'refresh');
+            } else {
+                /* username is taken */
+                $this->error = "Username already exists.";
+                $this->index();
+            }
+        }
 }
