@@ -19,7 +19,7 @@ class Main extends Main_Controller {
 		/* Set user name display and avatar img here */
 		session_Start();
 		$user = array();
-		$user = $this->users->get(1); //This needs to get sesssion var. 
+		$user = $this->users->get(1); //This needs to get session var. 
 		echo $user->avatar;
 		$this->data["uname"] = $_SESSION["user"];
 		$this->data["avatar"] = "assets/images/null.jpg";
