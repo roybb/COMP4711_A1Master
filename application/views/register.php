@@ -8,7 +8,7 @@
         <label for="password">Password:</label>
         <input id="password" type="password" name="password" maxlength="24">
         <br>
-        <label for="file">Profile Image:</label>
+        <label for="file">Profile Image (.gif/.jpg/.png, max 128x128):</label>
         <input type="file" name="userfile" />
         <br>
         <input type="submit" value="Register">
