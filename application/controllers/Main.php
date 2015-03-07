@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends Main_Controller {
 
 	function __construct() {
-        parent::__construct();
+        parent::__construct('users', 'userid');
     }
 	
 	public function index()
@@ -16,9 +16,13 @@ class Main extends Main_Controller {
 		$this->data["menu"] = "menu";
 		$this->data["content"] = "main";
 		
-		/* Set user avatar img here */
+		/* Set user name display and avatar img here */
+		session_Start();
+		$user = array();
+		$user = $this->users->get(1); //This needs to get sesssion var. 
+		echo $user->avatar;
+		$this->data["uname"] = $_SESSION["user"];
 		$this->data["avatar"] = "assets/images/null.jpg";
-		$this->data["uname"] = "NULLUSER";
 		
 		/* calls Render in the Main_Controller 
 		see MY_Controller.php in ./core */
