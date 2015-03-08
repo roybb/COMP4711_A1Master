@@ -38,7 +38,7 @@ class Admin extends Main_Controller {
         $this->data['funame'] = makeTextField('Username', 'uname', $user->uname,"24 characters max" ,24);
         $this->data['fpword'] = makeTextField('Password', 'pword', $user->pword,"24 characters max", 24);
         $this->data['frole'] = makeTextField('Role', 'role', $user->role, "8 characters max", 8);
-        $this->data['favatar'] = makeTextField('Avatar', 'avatar', $user->avatar, "64 characters max", 64);
+        $this->data['favatar'] = makeTextField('Avatar', 'avatar', $user->avatar, "(OPTIONAL) 64 characters max", 64);
         $this->data['fsubmit'] = makeSubmitButton('Validate User', "Click here to validate the user data", 'btn-success');
         $this->data['content'] = 'user_edit';
         
@@ -66,6 +66,7 @@ class Admin extends Main_Controller {
         $record->role = $this->input->post('role');
         $record->avatar = $this->input->post('avatar');
         
+        // set default image if none specified
         if (empty($record->avatar)) {
             $record->avatar = 'null.jpg';
         }
