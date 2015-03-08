@@ -1,9 +1,11 @@
 <div class ="row">
-    <form action="/admin/confirm">
+    <div class="errors">{message}</div>
+    <form action="/admin/confirm" method="post">
         {fuserid}
         {funame}
         {fpword}
         {frole}
         {favatar}
+        {fsubmit}
     </form>
 </div>
