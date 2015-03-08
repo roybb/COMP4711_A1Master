@@ -67,7 +67,7 @@ class Login extends Main_Controller {
         if (count($this->errors) > 0) 
             $this->index();
         else
-            redirect('/');
+            redirect('/main');
     }
     
 
