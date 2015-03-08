@@ -13,7 +13,7 @@
 					
 			<div class="heading_page">
 				<div id="profilebox">
-					<img id="avatar" alt="avatar" src="{avatar}"></image>
+					<img id="avatarbox" alt="avatar" src="{avatar}"></image>
 					<br>{uname} </br>
 				</div>
 				<span id="heading_text">{heading}</span>
