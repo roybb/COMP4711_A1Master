@@ -2,7 +2,7 @@
 
 ?>
 
-<a href="/" class="button_div">
+<a href="/Main" class="button_div">
 	<div class="menubutton  nav">
 		Home
 	</div>
