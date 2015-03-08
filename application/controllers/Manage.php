@@ -36,9 +36,10 @@ class Manage extends Main_Controller {
             $this->render();  
     }
     function confirm() {
-        $record = $this->subscription->create();
+        session_Start();
+		$record = $this->subscription->create();
         $record->url = $this->input->post('furl');
-        $record->userid = 1;
+        $record->userid = $_SESSION['id'];
         $this->subscription->add($record);
         redirect('/manage');
     }
