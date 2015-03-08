@@ -3,24 +3,33 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main_Controller extends CI_Controller {
-	
-	protected $data = array();
+    protected $data = array();
 
-	function __construct() {
-        parent::__construct();
-		$this->data = array();
-		/*$this->buttons = array();*/
+    function __construct() {
+    parent::__construct();
+            $this->data = array();
+            /*$this->buttons = array();*/
     }
 	
-	function render() 
-	{
-		/* Set up  menu */
-		$this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
-		
-		/* Set up page */
-		$this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
-		$this->parser->parse("_template_main", $this->data);
-	}
+    function render() 
+    {
+            /* Set up  menu */
+            $this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
+
+            /* Set up page */
+            $this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
+            $this->parser->parse("_template_main", $this->data);
+    }
+    
+    function render_admin() 
+    {
+            /* Set up  menu */
+            $this->data["menu"] = $this->parser->parse($this->data["menu"], $this->data, true);
+
+            /* Set up page */
+            $this->data["content"] = $this->parser->parse($this->data["content"], $this->data, true);
+            $this->parser->parse("_template_admin", $this->data);
+    }
     
     function render_login()
     {
