@@ -6,36 +6,44 @@
  * and open the template in the editor.
  */
 
-class Manage extends Main_Controller {
+class Admin extends Main_Controller {
 
     function __construct() {
         parent::__construct();
-        //$this->load->helper('formfields');
+        $this->load->helper('formfields');
     }
     
     public function index() {
         
              /* Set the page title, heading, and content here */
-            $this->data["pagetitle"] = "RedScribeIt Manage";
-            $this->data["heading"] = "Manage Subscriptions";
+            $this->data["pagetitle"] = "RedScribeIt Admin Page";
+            $this->data["heading"] = "Admin Page";
             $this->data["menu"] = "menu";
-            $this->data["content"] = 'manage';
-            
-            $this->load->model("subscription");
-			
-	    /* Set username and avatar img here */
-            $this->data["avatar"] = "assets/images/null.jpg";
-            $this->data["uname"] = "NULLUSER";
+            $this->data["content"] = 'admintable';
+            $this->data["users"] = $this->users->all();
 		
             /* calls Render in the Main_Controller 
             see MY_Controller.php in ./core */
-            $this->render();  
+            $this->render_admin();  
     }
-    function confirm() {
-        $record = $this->subscription->create();
-        $record->url = $this->input->post('furl');
-        $record->userid = 1;
-        $this->subscription->add($record);
-        redirect('/manage');
+    
+    function add() {
+        $user = $this->users->create();
+        $this->present($user);
+    }
+    
+    function present($user) {
+        $this->data['fuserid'] = makeTextField('User ID', 'userid', $user->userid);
+        $this->data['funame'] = makeTextField('Username', 'uname', $user->uname);
+        $this->data['fpword'] = makeTextField('Password', 'pword', $user->pword);
+        $this->data['frole'] = makeTextField('Role', 'role', $user->role);
+        $this->data['favatar'] = makeTextField('Avatar', 'avatar', $user->avatar);
+        $this->data['content'] = 'user_edit';
+        
+        /* Set the page title, heading, and content here */
+        $this->data["pagetitle"] = "RedScribeIt Admin Page";
+        $this->data["heading"] = "Admin Page";
+        $this->data["menu"] = "menu";
+        $this->render_admin();
     }
 }
