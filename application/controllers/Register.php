@@ -52,7 +52,7 @@ class Register extends Main_Controller {
                         'role' => "user"
                          );
                         /* check for duplicate entries & register accordingly */
-                        $this->isDuplicate();
+                        $this->isDuplicate($userdata);
                     } else {
                         /* user uploads an invalid file */
                         $this->error = $this->upload->display_errors();
@@ -72,15 +72,15 @@ class Register extends Main_Controller {
                         'role' => "user"
                     );
                     /* check for duplicate entries & register accordingly */
-                    $this->isDuplicate();
+                    $this->isDuplicate($userdata);
 		}
 	}
         
-        function isDuplicate() {
+        function isDuplicate($user) {
             /* first check for duplicate user */
-            if ($this->users->checkDuplicate($userdata['uname'])) {
+            if ($this->users->checkDuplicate($user['uname'])) {
                 /* successful register, username not taken */
-                $this->users->adduser($userdata);
+                $this->users->adduser($user);
                 redirect('/login', 'refresh');
             } else {
                 /* username is taken */
