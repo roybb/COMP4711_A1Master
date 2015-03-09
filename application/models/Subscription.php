@@ -78,5 +78,20 @@ class Subscription extends MY_Model2 {
 		$result = file_get_contents($endpoint);
 		return $result;
 	}
+        
+        /*Returns false if user already has 5 subreddit subscriptions*/
+        function validateSubscription($userid)
+        {
+            $ret = array();
+            $user = $this->some('userid', $userid);
+            
+            if(count($user) < 5)
+            $ret = TRUE;
+            
+            else
+            $ret = FALSE;
+            
+            return $ret;
+        }
 
 }
